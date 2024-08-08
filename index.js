@@ -1,13 +1,19 @@
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
+
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
 
+// Replace <username>, <password>, and <your-cluster-url> with actual values
+const mongoURI = 'mongodb+srv://mohamedbelkhira09:tU6WWtBwcXiHagkH@cluster0.fm4hkvb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
-
+mongoose.connect(mongoURI)
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.error(err));
 
 
 
